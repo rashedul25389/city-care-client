@@ -13,6 +13,7 @@ const LatestResolvedIssues = () => {
             const res = await axiosPublic.get(
                 '/issues?status=resolved&limit=6'
             );
+            console.log('LATEST ISSUES RESPONSE 👉', res.data);
             return res.data;
         },
     });
@@ -35,7 +36,7 @@ const LatestResolvedIssues = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {issues.map((issue) => (
                     <div
-                        key={issue._id}
+                        key={issue._id || issue.id}
                         className="bg-white rounded-xl shadow-md overflow-hidden border hover:shadow-lg transition">
                         <img
                             src={

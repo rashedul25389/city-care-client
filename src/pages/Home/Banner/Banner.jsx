@@ -13,7 +13,7 @@ const Banner = () => {
     return (
         <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
             {[c1, c2, c3, c4, c5, c6].map((img, index) => (
-                <div key={index} className="relative">
+                <div key={index} className="relative mt-15">
                     <img src={img} className="h-[70vh] object-cover" />
 
                     {/* Overlay */}

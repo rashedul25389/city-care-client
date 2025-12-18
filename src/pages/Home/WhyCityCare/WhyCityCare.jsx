@@ -1,7 +1,7 @@
 import React from 'react';
 
 const WhyCityCare = () => (
-    <section className="bg-slate-900 py-20">
+    <section className="bg-secondary py-20 mb-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold text-white mb-6">
                 Why CityCare?

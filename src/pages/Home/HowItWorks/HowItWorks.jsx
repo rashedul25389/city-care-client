@@ -7,20 +7,20 @@ const steps = [
 ];
 
 export const HowItWorks = () => (
-    <section className="bg-slate-800 py-20">
-        <div className="max-w-5xl mx-auto px-6">
-            <h2 className="text-4xl font-bold text-center text-white mb-12">
+    <section className="pb-20">
+        <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-secondary mb-12">
                 How It Works
             </h2>
             <div className="grid md:grid-cols-4 gap-6">
                 {steps.map((step, i) => (
                     <div
                         key={i}
-                        className="bg-slate-900 p-6 rounded-xl text-center">
-                        <div className="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-primary text-white font-bold mb-4">
+                        className="bg-primary p-6 rounded-xl text-center">
+                        <div className="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-secondary text-white font-bold mb-4">
                             {i + 1}
                         </div>
-                        <p className="text-slate-300">{step}</p>
+                        <p className="text-slate-200">{step}</p>
                     </div>
                 ))}
             </div>

@@ -58,6 +58,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useParams } from 'react-router';
 import useAxios from '../../hooks/useAxios';
+import Loading from '../../components/Loading/Loading';
 
 const IssueTrack = () => {
     const { trackingId } = useParams();
@@ -80,7 +81,7 @@ const IssueTrack = () => {
 
     if (isLoading)
         return (
-            <p className="text-center mt-4 text-lg">Loading tracking logs...</p>
+            <Loading/>
         );
 
     if (isError)
