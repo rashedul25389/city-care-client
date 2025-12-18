@@ -30,7 +30,7 @@ import Contact from '../pages/Contact/Contact';
 import SupportMessages from '../pages/Dashboard/SupportMessages/SupportMessages';
 import PaymentSuccess from '../pages/Dashboard/Payment/PaymentSuccess';
 
-export const Router = createBrowserRouter([
+export const router = createBrowserRouter([
     {
         path: '/',
         element: <RootLayout />,
