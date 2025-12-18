@@ -18,7 +18,10 @@ const ContactPage = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            await axios.post('http://localhost:3000/contact-messages', form);
+            await axios.post(
+                'https://city-care-server-three.vercel.app/contact-messages',
+                form
+            );
             setSuccess('Message sent successfully!');
             setForm({ name: '', email: '', message: '' });
         } catch (err) {
@@ -32,7 +35,9 @@ const ContactPage = () => {
             <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
                 <div className="flex items-center gap-3 mb-6">
                     <img src={logo} alt="CityCare" className="w-10" />
-                    <h2 className="text-2xl font-bold text-primary">Contact CityCare</h2>
+                    <h2 className="text-2xl font-bold text-primary">
+                        Contact CityCare
+                    </h2>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -59,14 +64,17 @@ const ContactPage = () => {
                         onChange={handleChange}
                         required
                         placeholder="Your Message"
-                        className="textarea textarea-bordered w-full"
-                    ></textarea>
+                        className="textarea textarea-bordered w-full"></textarea>
 
-                    <button className="btn btn-primary w-full" disabled={loading}>
+                    <button
+                        className="btn btn-primary w-full"
+                        disabled={loading}>
                         {loading ? 'Sending...' : 'Send Message'}
                     </button>
 
-                    {success && <p className="text-green-600 text-center">{success}</p>}
+                    {success && (
+                        <p className="text-green-600 text-center">{success}</p>
+                    )}
                 </form>
             </div>
         </div>
@@ -74,5 +82,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-
-
