@@ -10,6 +10,7 @@ import {
     updateProfile,
 } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.init';
+import Loading from '../../components/Loading/Loading';
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -62,7 +63,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         updateUserProfile,
     };
-
+    if (loading) return <Loading></Loading>;
     return (
         <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
     );

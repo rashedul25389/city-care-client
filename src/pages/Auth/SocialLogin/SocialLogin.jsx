@@ -32,15 +32,15 @@ const SocialLogin = () => {
     };
 
     return (
-        <div className="text-center pb-8">
+        <div className="text-center pb-3 w-full">
             <p className="mb-2">OR</p>
             <button
                 onClick={handleGoogleSignIn}
-                className="btn bg-white text-black border-[#e5e5e5]">
+                className="btn text-black w-full bg-white border-primary transition border-b-4 hover:border-secondary hover:font-extrabold">
                 <svg
                     aria-label="Google logo"
-                    width="16"
-                    height="16"
+                    width="20"
+                    height="20"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512">
                     <g>

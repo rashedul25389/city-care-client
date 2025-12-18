@@ -2,12 +2,13 @@ import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import Loading from '../../../components/Loading/Loading';
 
 const CompletedIssues = () => {
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
 
-    const { data: issues = [] } = useQuery({
+    const { data: issues = [], isLoading } = useQuery({
         queryKey: ['issues', user.email, 'resolved'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/staffs/my-issues`);
@@ -20,6 +21,7 @@ const CompletedIssues = () => {
             ? issue.cost * 0.8
             : issue.cost * 0.6;
 
+    if (isLoading) return <Loading></Loading>;
     return (
         <div className="p-6">
             <h2 className="text-4xl font-bold mb-4">

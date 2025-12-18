@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { toast } from 'react-hot-toast';
+import Loading from '../../../components/Loading/Loading';
 
 const PaymentManagement = () => {
     const axiosSecure = useAxiosSecure();
@@ -34,7 +35,7 @@ const PaymentManagement = () => {
         },
     });
 
-    if (isLoading) return <p>Loading payments...</p>;
+    if (isLoading) return <Loading></Loading>;
 
     return (
         <div>

@@ -3,6 +3,7 @@ import Logo from '../../components/Logo/Logo';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import Loading from '../../components/Loading/Loading';
 
 const Contact = () => {
     const axiosSecure = useAxiosSecure();
@@ -30,7 +31,7 @@ const Contact = () => {
             setLoading(false);
         }
     };
-
+    if (loading) return <Loading></Loading>;
     return (
         <div className="min-h-screen bg-base-100">
             {/* Header */}

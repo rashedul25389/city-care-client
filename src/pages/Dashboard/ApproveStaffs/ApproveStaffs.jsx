@@ -89,11 +89,16 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { FaUserCheck } from 'react-icons/fa';
 import { IoPersonRemoveSharp } from 'react-icons/io5';
 import Swal from 'sweetalert2';
+import Loading from '../../../components/Loading/Loading';
 
 const ApproveStaffs = () => {
     const axiosSecure = useAxiosSecure();
 
-    const { data: staffs = [], refetch } = useQuery({
+    const {
+        data: staffs = [],
+        refetch,
+        isLoading,
+    } = useQuery({
         queryKey: ['staffs', 'pending'],
         queryFn: async () => {
             const res = await axiosSecure.get('/staffs');
@@ -120,7 +125,7 @@ const ApproveStaffs = () => {
             Swal.fire('Error', 'Failed to update status', err);
         }
     };
-
+    if (isLoading) return <Loading></Loading>;
     return (
         <div className="p-6">
             <h2 className="text-3xl font-bold mb-4">

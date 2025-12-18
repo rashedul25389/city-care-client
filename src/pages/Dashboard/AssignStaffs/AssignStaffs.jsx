@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useRef, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import Loading from '../../../components/Loading/Loading';
 
 const AssignStaffs = () => {
     const [selectedIssue, setSelectedIssue] = useState(null);
@@ -11,7 +12,11 @@ const AssignStaffs = () => {
     /* =======================
        Pending Issues
     ======================= */
-    const { data: issues = [], refetch: issuesRefetch } = useQuery({
+    const {
+        data: issues = [],
+        refetch: issuesRefetch,
+        isLoading,
+    } = useQuery({
         queryKey: ['issues', 'pending'],
         queryFn: async () => {
             const res = await axiosSecure.get('/issues?status=pending');
@@ -65,7 +70,7 @@ const AssignStaffs = () => {
             Swal.fire('Error', 'Failed to assign staff', err);
         }
     };
-
+    if (isLoading) return <Loading></Loading>;
     return (
         <div>
             <h2 className="text-4xl font-bold mb-6">

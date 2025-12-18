@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
+import Loading from '../../components/Loading/Loading';
 
 const CreateIssue = () => {
     const { register, handleSubmit, reset, control } = useForm({
@@ -113,7 +114,7 @@ const CreateIssue = () => {
             });
         }
     };
-
+    if (loading) return <Loading></Loading>;
     return (
         <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-6">
             <h2 className="text-4xl font-bold mb-6 text-center text-sky-600">

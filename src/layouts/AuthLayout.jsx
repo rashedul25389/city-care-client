@@ -1,16 +1,17 @@
 import React from 'react';
 import Logo from '../components/Logo/Logo';
 import { Outlet } from 'react-router';
-import LogoOne from '../components/Logo/LogoOne';
+import LogoTwo from '../components/Logo/LogoTwo';
+import Navbar from '../pages/Shared/Navbar/Navbar';
+import Footer from '../pages/Shared/Footer/Footer';
 const AuthLayout = () => {
     return (
-        <div className="max-w-7xl mx-auto">
-            <LogoOne />
-            <div className="flex items-center">
-                <div className="flex-1">
-                    <Outlet></Outlet>
-                </div>
+        <div className="mx-auto">
+            <Navbar />
+            <div className="flex items-center py-10">
+                <Outlet></Outlet>
             </div>
+            <Footer />
         </div>
     );
 };

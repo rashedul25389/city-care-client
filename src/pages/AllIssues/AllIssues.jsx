@@ -94,6 +94,7 @@ import IssueCard from './IssueCard';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useAuth from '../../hooks/useAuth';
 import toast from 'react-hot-toast';
+import Loading from '../../components/Loading/Loading';
 
 const AllIssues = () => {
     const axiosSecure = useAxiosSecure();
@@ -142,7 +143,7 @@ const AllIssues = () => {
         }
     };
 
-    if (isLoading) return <p className="text-center mt-8">Loading issues...</p>;
+    if (isLoading) return <Loading />;
 
     // Sort boosted issues on top
     const sortedIssues = [...issues].sort((a, b) => {

@@ -1,20 +1,7 @@
-import Lottie from "react-lottie";
-import loadingAnimation from "../../assets/json/loading.json";
+import CityScanLoader from './CityScanLoader';
 
-const Loading = () => {
-  return (
-    <div className="flex flex-col items-center justify-center gap-5">
-      <div className="max-w-sm relative">
-        <Lottie
-          options={{
-            animationData: loadingAnimation,
-            autoplay: true,
-            loop: true,
-          }}
-        ></Lottie>
-      </div>
-    </div>
-  );
-};
+function Loading() {
+    return <CityScanLoader />;
+}
 
 export default Loading;

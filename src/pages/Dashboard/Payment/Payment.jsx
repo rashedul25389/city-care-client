@@ -68,6 +68,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useParams } from 'react-router';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import Loading from '../../../components/Loading/Loading';
 
 const Payment = () => {
     const { issueId } = useParams();
@@ -101,9 +102,7 @@ const Payment = () => {
 
     if (isLoading) {
         return (
-            <div>
-                <span className="loading loading-infinity loading-xl"></span>
-            </div>
+            <Loading/>
         );
     }
 

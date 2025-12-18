@@ -83,13 +83,14 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { FaUserShield } from 'react-icons/fa';
 import { FiShieldOff } from 'react-icons/fi';
 import Swal from 'sweetalert2';
+import Loading from '../../../components/Loading/Loading';
 
 const UsersManagement = () => {
     const axiosSecure = useAxiosSecure();
     const [searchText, setSearchText] = useState('');
     const [users, setUsers] = useState([]);
 
-    const { data = [] } = useQuery({
+    const { data = [], isLoading } = useQuery({
         queryKey: ['users', searchText],
         queryFn: async () => {
             const res = await axiosSecure.get(
@@ -164,7 +165,7 @@ const UsersManagement = () => {
             }
         });
     };
-
+    if (isLoading) return <Loading></Loading>;
     return (
         <div className="p-4">
             <h2 className="text-4xl mb-4">Manage Users: {users.length}</h2>
