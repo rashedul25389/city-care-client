@@ -61,16 +61,17 @@ const Home = () => {
     return (
         <div>
             <Banner />
+            <div className="max-w-7xl mx-auto">
+                <FeaturesSection />
+                {/* ISSUE SLIDER */}
+                {!isLoading && <Brands issues={issues} />}
 
-            <FeaturesSection />
-            {/* ISSUE SLIDER */}
-            {!isLoading && <Brands issues={issues} />}
-
-            <Reviews reviewsPromise={reviewsPromise} />
-            <HowItWorks />
-            <WhyCityCare />
-            <CallToAction />
-            <LatestResolvedIssues />
+                <Reviews reviewsPromise={reviewsPromise} />
+                <HowItWorks />
+                <WhyCityCare />
+                <CallToAction />
+                <LatestResolvedIssues />
+            </div>
         </div>
     );
 };
