@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
