@@ -111,7 +111,7 @@ const Banner = () => {
 
                         {/* Text and Buttons */}
                         <div className="absolute inset-0 flex items-center">
-                            <div className="container mx-auto px-6 md:px-12 flex justify-start items-center">
+                            <div className="container mx-auto px-6 md:px-30 flex justify-start items-center">
                                 <AnimatePresence mode="wait">
                                     {currentIndex === index && (
                                         <motion.div
